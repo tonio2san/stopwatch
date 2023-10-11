@@ -3,8 +3,8 @@ const startButton = document.querySelector("#start");
 const stopButton = document.querySelector("#stop");
 const resetButton = document.querySelector("#reset");
 
-const displayTwoDigitNumber = 2;
-const displayThreeDigitNumber = 3;
+const twoDigitNumber = 2;
+const threeDigitNumber = 3;
 const addZeroToTheLeft = "0";
 
 let startTime;
@@ -14,24 +14,24 @@ let timeoutID;
 function displayTime() {
   const currentTime = new Date(Date.now() - startTime + holdTime);
   const h = String(currentTime.getUTCHours()).padStart(
-    displayTwoDigitNumber,
+    twoDigitNumber,
     addZeroToTheLeft
   );
   const m = String(currentTime.getUTCMinutes()).padStart(
-    displayTwoDigitNumber,
+    twoDigitNumber,
     addZeroToTheLeft
   );
   const s = String(currentTime.getUTCSeconds()).padStart(
-    displayTwoDigitNumber,
+    twoDigitNumber,
     addZeroToTheLeft
   );
   const ms = String(currentTime.getUTCMilliseconds()).padStart(
-    displayThreeDigitNumber,
+    threeDigitNumber,
     addZeroToTheLeft
   );
 
   time.textContent = `${h}:${m}:${s}.${ms}`;
-  timeoutID = setTimeout(displayTime, 1);
+  timeoutID = setTimeout(displayTime, 10);
 }
 
 // 配列で渡したボタンを無効化する
@@ -54,7 +54,7 @@ startButton.addEventListener("mousedown", () => {
 stopButton.addEventListener("mousedown", () => {
   setButtonDisabled([stopButton]);
   setButtonDisabled([startButton, resetButton], false);
-  
+
   clearTimeout(timeoutID);
   holdTime += Date.now() - startTime;
 });
