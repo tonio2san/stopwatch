@@ -13,9 +13,9 @@ let timeoutID;
 function displayTime() {
   const currentTime = new Date(Date.now() - startTime + holdTime);
   const h = String(currentTime.getUTCHours()).padStart(displayTwoDigitNumber, "0");
-  const m = String(currentTime.getMinutes()).padStart(displayTwoDigitNumber, "0");
-  const s = String(currentTime.getSeconds()).padStart(displayTwoDigitNumber, "0");
-  const ms = String(currentTime.getMilliseconds()).padStart(displayThreeDigitNumber, "0");
+  const m = String(currentTime.getUTCMinutes()).padStart(displayTwoDigitNumber, "0");
+  const s = String(currentTime.getUTCSeconds()).padStart(displayTwoDigitNumber, "0");
+  const ms = String(currentTime.getUTCMilliseconds()).padStart(displayThreeDigitNumber, "0");
 
   time.textContent = `${h}:${m}:${s}.${ms}`;
   timeoutID = setTimeout(displayTime, 1);

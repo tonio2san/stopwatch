@@ -53,9 +53,9 @@ body {
 }
 .stopwatch__button:hover {
   cursor: pointer;
-  background-color: #fc9;
+  background-color: #960;
 }
 .stopwatch__button:disabled {
   cursor: default;
-  background-color: #fc9;
+  background-color: #960;
 }
