@@ -1,0 +1,61 @@
+html,
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+  background-color: #0cc;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+.stopwatch {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #333;
+  text-align: center;
+}
+.stopwatch__time {
+  font-size: 4rem;
+  margin: 1.6rem;
+}
+.stopwatch__button {
+  font-size: 1.6rem;
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  background-color: #c90;
+  border-radius: 1.6rem;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+.stopwatch__button:hover {
+  cursor: pointer;
+  background-color: #fc9;
+}
+.stopwatch__button:disabled {
+  cursor: default;
+  background-color: #fc9;
+}
