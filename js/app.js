@@ -21,7 +21,7 @@ function displayTime() {
   timeoutID = setTimeout(displayTime, 1);
 }
 
-// スタートボタンがクリックされたら時間を進める
+// スタートボタンが押されたら時間を進める
 startButton.addEventListener("mousedown", () => {
   startButton.disabled = true;
   stopButton.disabled = false;
@@ -30,7 +30,7 @@ startButton.addEventListener("mousedown", () => {
   displayTime();
 });
 
-// ストップボタンがクリックされたら時間を止める
+// ストップボタンが押されたら時間を止める
 stopButton.addEventListener("mousedown", function () {
   startButton.disabled = false;
   stopButton.disabled = true;
@@ -39,7 +39,7 @@ stopButton.addEventListener("mousedown", function () {
   holdTime += Date.now() - startTime;
 });
 
-// リセットボタンがクリックされたら時間を0に戻す
+// リセットボタンが押されたら時間を0に戻す
 resetButton.addEventListener("mousedown", function () {
   startButton.disabled = false;
   stopButton.disabled = true;
