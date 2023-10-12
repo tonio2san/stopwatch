@@ -15,14 +15,14 @@ body {
 .stopwatch {
   background-color: #fff;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  border-radius: 1.6rem;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   color: #333;
   text-align: center;
 
-  &__time {
+  &__display {
     font-size: 4rem;
     margin: 1.6rem;
   }
@@ -35,6 +35,10 @@ body {
     background-color: #c90;
     border-radius: 1.6rem;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+
+    & + & {
+        margin-left: 1rem;
+    }
 
     &:hover {
       cursor: pointer;

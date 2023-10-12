@@ -40,11 +40,17 @@ function setButtonDisabled(buttons, isDisabled = true) {
     button.disabled = isDisabled;
   });
 }
+function setButtonEnabled(buttons, isDisabled = true) {
+  buttons.forEach(button => {
+    button.disabled = !isDisabled;
+  });
+}
+
 
 // スタートボタンが押されたら時間を進める
 startButton.addEventListener("mousedown", () => {
   setButtonDisabled([startButton, resetButton]);
-  setButtonDisabled([stopButton], false);
+  setButtonEnabled([stopButton]);
 
   startTime = Date.now();
   displayTime();
@@ -53,7 +59,7 @@ startButton.addEventListener("mousedown", () => {
 // ストップボタンが押されたら時間を止める
 stopButton.addEventListener("mousedown", () => {
   setButtonDisabled([stopButton]);
-  setButtonDisabled([startButton, resetButton], false);
+  setButtonEnabled([startButton, resetButton]);
 
   clearTimeout(timeoutID);
   holdTime += Date.now() - startTime;
@@ -62,7 +68,7 @@ stopButton.addEventListener("mousedown", () => {
 // リセットボタンが押されたら時間を0に戻す
 resetButton.addEventListener("mousedown", () => {
   setButtonDisabled([stopButton, resetButton]);
-  setButtonDisabled([startButton], false);
+  setButtonEnabled([startButton]);
 
   time.textContent = "00:00:00.000";
   holdTime = 0;
